@@ -1,0 +1,25 @@
+<table class="table table-sm">
+  <thead>
+    <th>Full Name</th>
+    <th>Mobile</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Actions</th>
+  </thead>
+  <ng-container *ngFor="let customer of customers">
+    <tr class="table-light">
+      <td>{{ customer.fullname}}</td>
+      <td>{{ customer.mobile_no}}</td>
+      <td>{{ customer.email}}</td>
+      <td>{{ customer.address}}</td>
+      <td>
+        <button class="btn btn-outline-info" (click)="_service.showForm(customer)">Edit</button>
+        <button class="btn btn-outline-info" (click)= "onDelete(customer.$key)">Delete</button>
+      </td>
+    </tr>
+  </ng-container>
+</table>
+
+<div class="alert alert-danger" *ngIf="deleteSuccess">
+    Deleted successfully
+</div>
