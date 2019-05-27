@@ -53,9 +53,9 @@ export class CustomerService {
   }
 
   //delete
-  deleteCustomer(customer)
+  deleteCustomer($key)
   {
-      this._customerList.remove(customer);
+      this._customerList.remove($key );
   }
 
 }

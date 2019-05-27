@@ -1,5 +1,6 @@
 import { CustomerService } from './../shared/customer.service';
 import { Component, OnInit } from '@angular/core';
+import { $ } from 'protractor';
 
 @Component({
   selector: 'app-customer-list',
@@ -32,7 +33,7 @@ export class CustomerListComponent implements OnInit {
   //   this._service.updateCustomer($key);
   // }
 
-  onDelete($key)
+  onDelete($key) //you can directly call the function from _service as done for edit
   {
     if(confirm("Sure, want to delete?"))
     {
@@ -41,5 +42,5 @@ export class CustomerListComponent implements OnInit {
       setTimeout(()=> this.deleteSuccess=false, 3000);
     }
   }
-
+  
 }
